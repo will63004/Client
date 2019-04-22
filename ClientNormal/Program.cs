@@ -1,5 +1,6 @@
 ﻿using ClientNormal.Command;
 using ClientNormal.Service;
+using Protocol;
 using System;
 using System.Threading;
 
@@ -19,11 +20,13 @@ namespace ClientNormal
             ProtocolParser protocolParser = new ProtocolParser(m_client);
 
             Thread.Sleep(5000);
-            Student student = new Student();
-            student.Name = "Client";
-            student.Age = 50;
+            Person person = new Person();
+            person.Header = new Header();
+            person.Header.ProtoID = ProtoID.HeartBeat;
+            person.Id = 1;
+            person.Name = "Client";
 
-            protocolParser.SendMessage(student);
+            protocolParser.SendMessage(person);
 
             do
             {

@@ -1,10 +1,7 @@
 ﻿using ClientNormal.Protocol.Tool;
 using Google.Protobuf;
+using Protocol;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClientNormal.Service
 {
@@ -30,8 +27,8 @@ namespace ClientNormal.Service
 
         private void OnReceiveHandle(byte[] buffer)
         {
-            Student student = ProtocolBuffConvert.Deserialize<Student>(buffer);
-            Console.WriteLine("Name {0}, Age {1}.", student.Name, student.Age);
+            Person person = ProtocolBuffConvert.Deserialize<Person>(buffer);
+            Console.WriteLine("ID {0}, Name {1}.", person.Id, person.Name);
         }
     }
 }
