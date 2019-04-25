@@ -1,4 +1,5 @@
 ﻿using ClientNormal.Command;
+using ClientNormal.Protocol;
 using ClientNormal.Service;
 using Protocol;
 using System;
@@ -17,16 +18,11 @@ namespace ClientNormal
             Client m_client = new Client(ip, port);
             m_client.Start();
 
-            ProtocolParser protocolParser = new ProtocolParser(m_client);
+            IProtocolContainer protocolContainer = new ProtocolContainer();
+            ProtocolParser protocolParser = new ProtocolParser(m_client, protocolContainer);
 
             Thread.Sleep(5000);
-            Person person = new Person();
-            person.Header = new Header();
-            person.Header.ProtoID = ProtoID.HeartBeat;
-            person.Id = 1;
-            person.Name = "Client";
-
-            protocolParser.SendMessage(person);
+            HeartBeatProtocol.ReqHeartBeat();
 
             do
             {

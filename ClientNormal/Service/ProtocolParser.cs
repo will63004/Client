@@ -7,11 +7,15 @@ namespace ClientNormal.Service
 {
     public class ProtocolParser
     {
-        private Client m_client;
+        private static Client m_client;
 
-        public ProtocolParser(Client client)
+        private IProtocolContainer m_protocolContainer;
+
+        public ProtocolParser(Client client, IProtocolContainer protocolContainer)
         {
             m_client = client;
+
+            m_protocolContainer = protocolContainer;
 
             m_client.OnReceiveHandle += OnReceiveHandle;
         }
@@ -20,15 +24,20 @@ namespace ClientNormal.Service
         {
             m_client.OnReceiveHandle -= OnReceiveHandle;
         }
-        public void SendMessage(IMessage message)
+        public static void SendMessage(IMessage message)
         {
             m_client.Send(ProtocolBuffConvert.Serialize(message));
         }
 
         private void OnReceiveHandle(byte[] buffer)
         {
-            Person person = ProtocolBuffConvert.Deserialize<Person>(buffer);
-            Console.WriteLine("ID {0}, Name {1}.", person.Id, person.Name);
+            Header header = Header.Parser.ParseFrom(buffer);
+
+            Action<byte[]> ack;
+            if (m_protocolContainer.TryGetValue(header.ProtoID, out ack))
+                ack?.Invoke(buffer);
+
+            Console.WriteLine("Receive ProtoID {0}.", header.ProtoID);
         }
     }
 }

@@ -24,8 +24,8 @@ namespace Protocol {
     static ProtoIDReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg1Qcm90b0lELnByb3RvEghQcm90b2NvbCoiCgdQcm90b0lEEg0KCUhlYXJ0",
-            "QmVhdBAAEggKBFRlc3QQAWIGcHJvdG8z"));
+            "Cg1Qcm90b0lELnByb3RvEghQcm90b2NvbCovCgdQcm90b0lEEhEKDVJlcV9I",
+            "ZWFydEJlYXQQABIRCg1BY2tfSGVhcnRCZWF0EAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protocol.ProtoID), }, null));
@@ -35,8 +35,8 @@ namespace Protocol {
   }
   #region Enums
   public enum ProtoID {
-    [pbr::OriginalName("HeartBeat")] HeartBeat = 0,
-    [pbr::OriginalName("Test")] Test = 1,
+    [pbr::OriginalName("Req_HeartBeat")] ReqHeartBeat = 0,
+    [pbr::OriginalName("Ack_HeartBeat")] AckHeartBeat = 1,
   }
 
   #endregion
