@@ -31,7 +31,8 @@ namespace ClientNormal.Service
 
         private void OnReceiveHandle(byte[] buffer)
         {
-            Header header = Header.Parser.ParseFrom(buffer);
+            Header header = Header.Parser.ParseFrom(buffer, 2, 4);
+            //HeartBeatAck hba = HeartBeatAck.Parser.ParseFrom(buffer);
 
             Action<byte[]> ack;
             if (m_protocolContainer.TryGetValue(header.ProtoID, out ack))
