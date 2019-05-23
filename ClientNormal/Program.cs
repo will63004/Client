@@ -20,10 +20,7 @@ namespace ClientNormal
 
             IProtocolContainer protocolContainer = new ProtocolContainer();
             ProtocolParser protocolParser = new ProtocolParser(m_client, protocolContainer);
-
-            Thread.Sleep(5000);
-            HeartBeatProtocol.ReqHeartBeat();
-
+            
             do
             {
                 CommandSystem.Command(Console.ReadLine());

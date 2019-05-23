@@ -24,8 +24,9 @@ namespace Protocol {
     static ProtoIDReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg1Qcm90b0lELnByb3RvEghQcm90b2NvbCovCgdQcm90b0lEEhEKDVJlcV9I",
-            "ZWFydEJlYXQQABIRCg1BY2tfSGVhcnRCZWF0EAFiBnByb3RvMw=="));
+            "Cg1Qcm90b0lELnByb3RvEghQcm90b2NvbCpaCgdQcm90b0lEEgsKB0luVmFs",
+            "aWQQABIRCg1SZXFfSGVhcnRCZWF0EAESEQoNQWNrX0hlYXJ0QmVhdBACEg0K",
+            "CVJlcV9Mb2dpbhADEg0KCUFja19Mb2dpbhAEYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protocol.ProtoID), }, null));
@@ -35,8 +36,11 @@ namespace Protocol {
   }
   #region Enums
   public enum ProtoID {
-    [pbr::OriginalName("Req_HeartBeat")] ReqHeartBeat = 0,
-    [pbr::OriginalName("Ack_HeartBeat")] AckHeartBeat = 1,
+    [pbr::OriginalName("InValid")] InValid = 0,
+    [pbr::OriginalName("Req_HeartBeat")] ReqHeartBeat = 1,
+    [pbr::OriginalName("Ack_HeartBeat")] AckHeartBeat = 2,
+    [pbr::OriginalName("Req_Login")] ReqLogin = 3,
+    [pbr::OriginalName("Ack_Login")] AckLogin = 4,
   }
 
   #endregion

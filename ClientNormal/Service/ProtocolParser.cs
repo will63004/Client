@@ -31,8 +31,11 @@ namespace ClientNormal.Service
 
         private void OnReceiveHandle(byte[] buffer)
         {
-            Header header = Header.Parser.ParseFrom(buffer, 2, 4);
-            //HeartBeatAck hba = HeartBeatAck.Parser.ParseFrom(buffer);
+            if (buffer.Length < 2)
+                return;
+
+            //ProtocolBuff 數據結構Tag為2byte
+            Header header = Header.Parser.ParseFrom(buffer, 2, buffer.Length - 2);
 
             Action<byte[]> ack;
             if (m_protocolContainer.TryGetValue(header.ProtoID, out ack))
