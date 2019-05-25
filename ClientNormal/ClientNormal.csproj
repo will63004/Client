@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ClientNormal</RootNamespace>
     <AssemblyName>ClientNormal</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,13 +46,22 @@
   <ItemGroup>
     <Compile Include="Command\CommandSystem.cs" />
     <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\SendHeartBeat.cs" />
     <Compile Include="Command\ShowCommandCode.cs" />
     <Compile Include="Command\StopService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Protocol\Student.cs" />
+    <Compile Include="Protocol\HeartBeatProtocol.cs" />
+    <Compile Include="Protocol\ProtocolStructure\Header.cs" />
+    <Compile Include="Protocol\ProtocolStructure\HeartBeatAck.cs" />
+    <Compile Include="Protocol\ProtocolStructure\HeartBeatReq.cs" />
+    <Compile Include="Protocol\ProtocolStructure\LoginAck.cs" />
+    <Compile Include="Protocol\ProtocolStructure\LoginReq.cs" />
+    <Compile Include="Protocol\ProtocolStructure\ProtoID.cs" />
     <Compile Include="Protocol\Tool\ProtocolBuffConvert.cs" />
     <Compile Include="Service\Client.cs" />
+    <Compile Include="Service\IProtocolContainer.cs" />
+    <Compile Include="Service\ProtocolContainer.cs" />
     <Compile Include="Service\ProtocolParser.cs" />
   </ItemGroup>
   <ItemGroup>
