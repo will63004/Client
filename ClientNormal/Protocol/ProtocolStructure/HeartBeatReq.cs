@@ -24,8 +24,8 @@ namespace Protocol {
     static HeartBeatReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJIZWFydEJlYXRSZXEucHJvdG8SCFByb3RvY29sGgxIZWFkZXIucHJvdG8i",
-            "MAoMSGVhcnRCZWF0UmVxEiAKBmhlYWRlchgBIAEoCzIQLlByb3RvY29sLkhl",
+            "ChJIZWFydEJlYXRSZXEucHJvdG8SCHByb3RvY29sGgxoZWFkZXIucHJvdG8i",
+            "MAoMSGVhcnRCZWF0UmVxEiAKBmhlYWRlchgBIAEoCzIQLnByb3RvY29sLkhl",
             "YWRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Protocol.HeaderReflection.Descriptor, },

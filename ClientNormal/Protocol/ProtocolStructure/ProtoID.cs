@@ -24,7 +24,7 @@ namespace Protocol {
     static ProtoIDReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg1Qcm90b0lELnByb3RvEghQcm90b2NvbCpaCgdQcm90b0lEEgsKB0luVmFs",
+            "Cg1Qcm90b0lELnByb3RvEghwcm90b2NvbCpaCgdQcm90b0lEEgsKB0luVmFs",
             "aWQQABIRCg1SZXFfSGVhcnRCZWF0EAESEQoNQWNrX0hlYXJ0QmVhdBACEg0K",
             "CVJlcV9Mb2dpbhADEg0KCUFja19Mb2dpbhAEYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,

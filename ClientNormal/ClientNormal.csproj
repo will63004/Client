@@ -49,6 +49,9 @@
     <Compile Include="Command\SendHeartBeat.cs" />
     <Compile Include="Command\ShowCommandCode.cs" />
     <Compile Include="Command\StopService.cs" />
+    <Compile Include="Game\GameSystem.cs" />
+    <Compile Include="Game\GlobalDefine.cs" />
+    <Compile Include="Game\HeartBeat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocol\HeartBeatProtocol.cs" />

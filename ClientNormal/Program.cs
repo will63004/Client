@@ -1,9 +1,7 @@
 ﻿using ClientNormal.Command;
-using ClientNormal.Protocol;
+using ClientNormal.Game;
 using ClientNormal.Service;
-using Protocol;
 using System;
-using System.Threading;
 
 namespace ClientNormal
 {
@@ -14,13 +12,15 @@ namespace ClientNormal
         static void Main(string[] args)
         {
             string ip = "127.0.0.1";
-            int port = 3000;
+            int port = 61000;
             Client m_client = new Client(ip, port);
             m_client.Start();
 
             IProtocolContainer protocolContainer = new ProtocolContainer();
             ProtocolParser protocolParser = new ProtocolParser(m_client, protocolContainer);
-            
+
+            GameSystem gameSystem = new GameSystem();
+
             do
             {
                 CommandSystem.Command(Console.ReadLine());
