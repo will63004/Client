@@ -24,13 +24,13 @@ namespace Protocol {
     static HeaderReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxIZWFkZXIucHJvdG8SCHByb3RvY29sGg1wcm90b0lELnByb3RvIjkKBkhl",
-            "YWRlchIiCgdwcm90b0lEGAEgASgOMhEucHJvdG9jb2wuUHJvdG9JRBILCgNn",
-            "aWQYAiABKARiBnByb3RvMw=="));
+            "CgxIZWFkZXIucHJvdG8SCHByb3RvY29sGg1wcm90b0lELnByb3RvIiwKBkhl",
+            "YWRlchIiCgdwcm90b0lEGAEgASgOMhEucHJvdG9jb2wuUHJvdG9JRGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Protocol.ProtoIDReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Header), global::Protocol.Header.Parser, new[]{ "ProtoID", "Gid" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Header), global::Protocol.Header.Parser, new[]{ "ProtoID" }, null, null, null)
           }));
     }
     #endregion
@@ -63,7 +63,6 @@ namespace Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Header(Header other) : this() {
       protoID_ = other.protoID_;
-      gid_ = other.gid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,17 +82,6 @@ namespace Protocol {
       }
     }
 
-    /// <summary>Field number for the "gid" field.</summary>
-    public const int GidFieldNumber = 2;
-    private ulong gid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong Gid {
-      get { return gid_; }
-      set {
-        gid_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Header);
@@ -108,7 +96,6 @@ namespace Protocol {
         return true;
       }
       if (ProtoID != other.ProtoID) return false;
-      if (Gid != other.Gid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -116,7 +103,6 @@ namespace Protocol {
     public override int GetHashCode() {
       int hash = 1;
       if (ProtoID != 0) hash ^= ProtoID.GetHashCode();
-      if (Gid != 0UL) hash ^= Gid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -134,10 +120,6 @@ namespace Protocol {
         output.WriteRawTag(8);
         output.WriteEnum((int) ProtoID);
       }
-      if (Gid != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(Gid);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -148,9 +130,6 @@ namespace Protocol {
       int size = 0;
       if (ProtoID != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ProtoID);
-      }
-      if (Gid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Gid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -166,9 +145,6 @@ namespace Protocol {
       if (other.ProtoID != 0) {
         ProtoID = other.ProtoID;
       }
-      if (other.Gid != 0UL) {
-        Gid = other.Gid;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -182,10 +158,6 @@ namespace Protocol {
             break;
           case 8: {
             ProtoID = (global::Protocol.ProtoID) input.ReadEnum();
-            break;
-          }
-          case 16: {
-            Gid = input.ReadUInt64();
             break;
           }
         }
