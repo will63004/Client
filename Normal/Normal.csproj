@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="connetnum.proto" />
+    <None Remove="Header.proto" />
+    <None Remove="HeartBeat.proto" />
+    <None Remove="Login.proto" />
+    <None Remove="MessageBroadcast.proto" />
+    <None Remove="ProtoID.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+    <PackageReference Include="Grpc" Version="2.23.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.23.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="connetnum.proto" />
+    <Protobuf Include="Header.proto" />
+    <Protobuf Include="HeartBeat.proto" />
+    <Protobuf Include="Login.proto" />
+    <Protobuf Include="MessageBroadcast.proto" />
+    <Protobuf Include="ProtoID.proto" />
+  </ItemGroup>
+
+</Project>

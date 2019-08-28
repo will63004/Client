@@ -75,8 +75,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Server\Normal\Normal.csproj">
-      <Project>{A3154C6F-F91D-4585-A768-96F86FF01D8F}</Project>
+    <ProjectReference Include="..\Normal\Normal.csproj">
+      <Project>{92cae81e-9603-4236-bef8-09ed4b9256cb}</Project>
       <Name>Normal</Name>
     </ProjectReference>
   </ItemGroup>

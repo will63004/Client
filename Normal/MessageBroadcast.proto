@@ -1,0 +1,9 @@
+syntax = "proto3";
+package protocol;
+
+import "header.proto";
+
+message MessageBroadcast{
+    protocol.Header header = 1;
+    string msg = 2;
+}
