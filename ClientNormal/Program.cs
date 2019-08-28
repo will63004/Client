@@ -12,7 +12,7 @@ namespace ClientNormal
         static void Main(string[] args)
         {
             string ip = "127.0.0.1";
-            int port = 61000;
+            int port = 3000;
             Client m_client = new Client(ip, port);
             m_client.Start();
 
