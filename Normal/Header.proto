@@ -5,4 +5,5 @@ import "protoID.proto";
 
 message Header{
     protocol.ProtoID protoID = 1;
+	uint64 PlayerID = 2;
 }

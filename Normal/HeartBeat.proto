@@ -10,3 +10,7 @@ message HeartBeatReq{
 message HeartBeatAck{
     protocol.Header header = 1;
 }
+
+service echoHeartBeat{
+rpc HeartBeat(HeartBeatReq) returns(HeartBeatAck);
+}
