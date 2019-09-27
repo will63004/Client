@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtoService", "ProtoServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpService", "TcpService\TcpService.csproj", "{A1769458-61BA-479A-8966-8758F33F669A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{19540423-0F8B-4782-9C44-67ABEFB570A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "Proxy\Proxy.csproj", "{1DA85D66-E0D6-427B-A879-B4E2AF8CAB04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{A1769458-61BA-479A-8966-8758F33F669A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1769458-61BA-479A-8966-8758F33F669A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1769458-61BA-479A-8966-8758F33F669A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19540423-0F8B-4782-9C44-67ABEFB570A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19540423-0F8B-4782-9C44-67ABEFB570A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19540423-0F8B-4782-9C44-67ABEFB570A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19540423-0F8B-4782-9C44-67ABEFB570A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DA85D66-E0D6-427B-A879-B4E2AF8CAB04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DA85D66-E0D6-427B-A879-B4E2AF8CAB04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DA85D66-E0D6-427B-A879-B4E2AF8CAB04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DA85D66-E0D6-427B-A879-B4E2AF8CAB04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

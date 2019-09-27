@@ -1,4 +1,4 @@
-﻿namespace ClientNormal.Game
+﻿namespace Game
 {
     public static class GlobalDefine
     {

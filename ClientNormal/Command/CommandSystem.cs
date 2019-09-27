@@ -13,8 +13,6 @@ namespace ClientNormal.Command
 
             m_commandContainer.Add("Stop Service", new StopService());
             m_commandContainer.Add("Show Command Code", new ShowCommandCode());
-            m_commandContainer.Add("Send HeartBeat", new SendHeartBeat());
-            m_commandContainer.Add("Send Login", new SendLogin());
         }
 
         public static void Command(string commandCode)

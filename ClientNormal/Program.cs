@@ -1,10 +1,10 @@
 ﻿using ClientNormal.Command;
-using ClientNormal.Game;
 using Grpc.Core;
 using System;
-using Protocol;
 using TcpService.Service;
 using ProtoService.ProtoBuff;
+using Game.HeartBeat;
+using Proxy.SendProto;
 
 namespace ClientNormal
 {
@@ -22,15 +22,10 @@ namespace ClientNormal
             IProtocolContainer protocolContainer = new ProtocolContainer(); 
             ProtocolParser protocolParser = new ProtocolParser(m_client, protocolContainer);
 
-            GameSystem gameSystem = new GameSystem();
-
-            Channel channel = new Channel(ip +":3001", ChannelCredentials.Insecure);
+            Channel channel = new Channel(ip + ":3001", ChannelCredentials.Insecure);
             //channel.ConnectAsync(null);
 
-            var client = new EchoChat.EchoChatClient(channel);
-            Header header = new Header();
-            header.PlayerID = 1;
-            var reply = client.SendChat(new ChatReq { Header = header,  Content = "Test" });            
+            HeartBeat heartBeat = new HeartBeat(new SendHeartBeat(channel));         
 
             do
             {

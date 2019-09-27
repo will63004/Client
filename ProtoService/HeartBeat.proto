@@ -8,9 +8,9 @@ message HeartBeatReq{
 }
 
 message HeartBeatAck{
-    protocol.Header header = 1;
+    protocol.Header header = 1; 
 }
 
-service echoHeartBeat{
+service EchoHeartBeat{
 rpc HeartBeat(HeartBeatReq) returns(HeartBeatAck);
 }

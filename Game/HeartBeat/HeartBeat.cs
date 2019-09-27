@@ -1,21 +1,25 @@
-﻿using ClientNormal.Protocol;
-using System.Timers;
+﻿using System.Timers;
+using Game;
 
-namespace ClientNormal.Game
+namespace Game.HeartBeat
 {
     public class HeartBeat
     {
+        private ISendHeartBeat m_sendHeartBeat;
+
         private Timer m_timer;
 
-        public HeartBeat()
+        public HeartBeat(ISendHeartBeat sendHeartBeat)
         {
+            m_sendHeartBeat = sendHeartBeat;
+
             // Create a timer with a two second interval.
             m_timer = new Timer(GlobalDefine.HeartBeatInterval);
             // Hook up the Elapsed event for the timer. 
             m_timer.Elapsed += OnTimedEvent;
             m_timer.AutoReset = true;
             m_timer.Enabled = true;
-            HeartBeatProtocol.ReqHeartBeat();
+            m_sendHeartBeat.Send();
         }
 
         ~HeartBeat()
@@ -25,7 +29,7 @@ namespace ClientNormal.Game
 
         private void OnTimedEvent(object sender, ElapsedEventArgs e)
         {
-            HeartBeatProtocol.ReqHeartBeat();
+            m_sendHeartBeat.Send();
         }
     }
 }
