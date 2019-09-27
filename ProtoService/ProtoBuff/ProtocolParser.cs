@@ -1,17 +1,17 @@
-﻿using ClientNormal.Protocol.Tool;
-using Google.Protobuf;
+﻿using Google.Protobuf;
 using Protocol;
 using System;
+using TcpService.Service;
 
-namespace ClientNormal.Service
+namespace ProtoService.ProtoBuff
 {
     public class ProtocolParser
     {
-        private static Client m_client;
+        private static ITcpClient m_client;
 
         private IProtocolContainer m_protocolContainer;
 
-        public ProtocolParser(Client client, IProtocolContainer protocolContainer)
+        public ProtocolParser(ITcpClient client, IProtocolContainer protocolContainer)
         {
             m_client = client;
 

@@ -1,9 +1,10 @@
 ﻿using ClientNormal.Command;
 using ClientNormal.Game;
-using ClientNormal.Service;
 using Grpc.Core;
 using System;
 using Protocol;
+using TcpService.Service;
+using ProtoService.ProtoBuff;
 
 namespace ClientNormal
 {

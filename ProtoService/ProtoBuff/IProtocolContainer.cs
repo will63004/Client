@@ -1,7 +1,7 @@
 ﻿using Protocol;
 using System;
 
-namespace ClientNormal.Service
+namespace ProtoService.ProtoBuff
 {
     public interface IProtocolContainer
     {

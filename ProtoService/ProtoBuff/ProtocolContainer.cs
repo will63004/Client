@@ -1,9 +1,9 @@
-﻿using ClientNormal.Protocol;
-using Protocol;
+﻿using Protocol;
+using ProtoService.Protocol;
 using System;
 using System.Collections.Generic;
 
-namespace ClientNormal.Service
+namespace ProtoService.ProtoBuff
 {
     public class ProtocolContainer: IProtocolContainer
     {

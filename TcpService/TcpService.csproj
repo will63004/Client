@@ -4,18 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4868281D-A889-4920-8B19-EEA41BB1D04E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ClientNormal</RootNamespace>
-    <AssemblyName>ClientNormal</AssemblyName>
+    <ProjectGuid>{A1769458-61BA-479A-8966-8758F33F669A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TcpService</RootNamespace>
+    <AssemblyName>TcpService</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,38 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\CommandSystem.cs" />
-    <Compile Include="Command\ICommand.cs" />
-    <Compile Include="Command\SendHeartBeat.cs" />
-    <Compile Include="Command\SendLogin.cs" />
-    <Compile Include="Command\ShowCommandCode.cs" />
-    <Compile Include="Command\StopService.cs" />
-    <Compile Include="Game\GameSystem.cs" />
-    <Compile Include="Game\GlobalDefine.cs" />
-    <Compile Include="Game\HeartBeat.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Google.Protobuf">
-      <Version>3.9.2</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProtoService\ProtoService.csproj">
-      <Project>{92cae81e-9603-4236-bef8-09ed4b9256cb}</Project>
-      <Name>Normal</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TcpService\TcpService.csproj">
-      <Project>{A1769458-61BA-479A-8966-8758F33F669A}</Project>
-      <Name>TcpService</Name>
-    </ProjectReference>
+    <Compile Include="Service\Client.cs" />
+    <Compile Include="Service\ITcpClient.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

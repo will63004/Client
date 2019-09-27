@@ -1,6 +1,6 @@
 ﻿using Google.Protobuf;
 
-namespace ClientNormal.Protocol.Tool
+namespace ProtoService.ProtoBuff
 {
     class ProtocolBuffConvert
     {

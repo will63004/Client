@@ -1,9 +1,8 @@
-﻿using ClientNormal.Protocol.Tool;
-using ClientNormal.Service;
-using Protocol;
+﻿using Protocol;
+using ProtoService.ProtoBuff;
 using System;
 
-namespace ClientNormal.Protocol
+namespace ProtoService.Protocol
 {
     public static class LoginProtocol
     {

@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TcpService\TcpService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Protobuf Include="Chat.proto" />
     <Protobuf Include="Header.proto" />
     <Protobuf Include="HeartBeat.proto" />

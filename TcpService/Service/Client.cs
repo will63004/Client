@@ -1,16 +1,11 @@
-﻿using ClientNormal.Protocol.Tool;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace ClientNormal.Service
+namespace TcpService.Service
 {
-    public class Client
+    public class Client:ITcpClient
     {
         public Socket m_socket;
         IPEndPoint m_endPoint;
